@@ -11,7 +11,7 @@ formAluno.addEventListener('submit', async e => {
     const aluno = {
         nome: document.querySelector('#nome').value.trim(),
         turma: document.querySelector('#turma').value.trim(),
-        nota1: document.querySelector('#nota1').value
+        nota1: document.querySelector('#nota1').value,
         nota2: document.querySelector('#nota2').value
     };
 
