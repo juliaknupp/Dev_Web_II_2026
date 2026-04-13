@@ -1,6 +1,7 @@
 import { validarAluno, limparSpans, preencherDados, exibirErro } from './alunoFunc.js';
 
 const formAluno = document.querySelector('#formAluno');
+const spanErro = document.querySelector('#spanErro');
 
 formAluno.addEventListener('submit', async e => {
     e.preventDefault();
@@ -10,12 +11,13 @@ formAluno.addEventListener('submit', async e => {
     const aluno = {
         nome: document.querySelector('#nome').value.trim(),
         turma: document.querySelector('#turma').value.trim(),
-        situacao: document.querySelector('#situacao').value.trim()
+        nota1: document.querySelector('#nota1').value
+        nota2: document.querySelector('#nota2').value
     };
 
     let erroValidacao = validarAluno(aluno);
     if (erroValidacao) {
-        exibirErro(erroValidacao);
+        exibirErro(campo, msg, tempo);
         return;
     }
 
@@ -31,7 +33,7 @@ formAluno.addEventListener('submit', async e => {
         try {
             dados = await resp.json();
         } catch {
-            throw new Error('Resposta não é em JSON.');
+            
         }
 
         if (!resp.ok) {
