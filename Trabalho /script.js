@@ -17,7 +17,7 @@ formAluno.addEventListener('submit', async e => {
 
     let erroValidacao = validarAluno(aluno);
     if (erroValidacao) {
-        exibirErro(campo, msg, tempo);
+        exibirErro(spanErro, msg, 3000);
         return;
     }
 
