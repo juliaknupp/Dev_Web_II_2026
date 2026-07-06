@@ -33,7 +33,6 @@ function preencheTabela(alunos){
         tdNota2.textContent=nota2;
         tdMedia.textContent=media;
         tdGrau.textContent=grau;
-        
         const[btnExcluir,btnAlterar]=['button','button'].map(btn =>document.createElement(btn));
         btnExcluir.dataset.id=id;
         btnExcluir.textContent='[EXCLUIR]';
